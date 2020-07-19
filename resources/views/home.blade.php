@@ -2,22 +2,45 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+    <div class="row">
+    <h3>Recent Jobs</h3>
+    <table class="table">
+        <thead>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </thead>
+        <tbody>
+            @foreach($jobs as $job)
+                <tr>
+                    <td>
+                        <img src="{{asset('avatar/jobLogo.png')}}" width="60">
+                    </td>
+                    <td>
+                        Position : {{$job->position}}
+                            <br>
+                            {{$job->type}}
+                    </td>
+                    <td>
+                        address : {{$job->address}}
+                    </td>
+                    <td>
+                        date : {{$job->created_at->diffForHumans()}}
+                    </td>
+                    <td>
+                        <a href="{{route('jobs.show', [$job->id,$job->slug])}}">
+                            <button class="btn btn-primary btn-sm">Apply</button>
+                        </a>
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+        </table>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
 
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
-        </div>
+
     </div>
 </div>
 @endsection
