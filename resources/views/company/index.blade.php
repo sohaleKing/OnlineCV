@@ -28,7 +28,7 @@
             @foreach($company->jobs as $job)
                 <tr>
                     <td>
-                        <img src="{{asset('avatar/companyLogo.png')}}" width="60">
+                        <img src="{{asset('img/JobsPortal.png')}}" width="60">
                     </td>
                     <td>
                         Position : {{$job->position}}

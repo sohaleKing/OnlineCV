@@ -18,6 +18,12 @@
                     <div class="card-header">Profile Picture</div>
                     <div class="card-body">
                         <input type="file" class="form-control" name="avatar"><br>
+                         <!-- Error Exception -->
+                         @if($errors->has('avatar'))
+                            <div class="error text-danger">
+                                <small> {{$errors->first('avatar')}}</small>
+                            </div>
+                        @endif 
                         <button  class="btn btn-secondary">Change</button>
                     </div>
                 </div>
@@ -33,16 +39,48 @@
                             <label>Address</label>
                             <textarea class="form-control" rows="3" name="address"
                             placeholder="{{Auth::user()->profile->address}}"></textarea>
+                         <!-- Error Exception -->
+                         @if($errors->has('address'))
+                            <div class="error text-danger">
+                                <small>* {{$errors->first('address')}}</small>
+                            </div>
+                        @endif 
                         </div>
+                       
+                        <div class="form-group">
+                            <label>Phone number</label>
+                            <input type="text" name="phone_number" class="form-control"
+                            placeholder="{{Auth::user()->profile->phone_number}}">
+                        <!-- Error Exception -->
+                         @if($errors->has('phone_number'))
+                            <div class="error text-danger">
+                                <small>* {{$errors->first('phone_number')}}</small><br>
+                                <!-- <small class="text-secondary">must be 10 digit numbers starts only with 514</small> -->
+                            </div>
+                        @endif 
+                        </div> 
+                                             
                         <div class="form-group">
                             <label>Experience</label>
                             <textarea class="form-control" rows="3" name="experience"
                             placeholder="{{Auth::user()->profile->experience}}"></textarea>
+                        <!-- Error Exception -->
+                         @if($errors->has('experience'))
+                            <div class="error text-danger">
+                                <small> * {{$errors->first('experience')}}</small>
+                            </div>
+                        @endif 
                         </div>
                         <div class="form-group">
                             <label>Biography</label>
                             <textarea class="form-control" rows="3" name="bio"
                             placeholder="{{Auth::user()->profile->bio}}"></textarea>
+                        <!-- Error Exception -->
+                         @if($errors->has('bio'))
+                            <div class="error text-danger">
+                                <small>* {{$errors->first('bio')}}</small>
+                            </div>
+                        @endif 
                         </div>
                         <div class="form-group">
                             <button class="btn btn-primary">Update</button>
@@ -63,6 +101,7 @@
                        <p><b>Name:</b> {{Auth::user()->name}}</p>
                        <p><b>Email:</b> {{Auth::user()->email}}</p>
                        <p><b>Address:</b> {{Auth::user()->profile->address}}</p>
+                       <p><b>Phone Number:</b> {{Auth::user()->profile->phone_number}}</p>
                        <p><b>Experience:</b> {{Auth::user()->profile->experience}}</p>
                        <p><b>Biography:</b> {{Auth::user()->profile->bio}}</p>
                        <p><b>member since:</b> {{Auth::user()->created_at->diffForHumans()}}</p>
@@ -93,6 +132,12 @@
                     <div class="card-header">Cover Letter</div>
                     <div class="card-body">
                         <input type="file" class="form-control" name="cover_letter"><br>
+                         <!-- Error Exception -->
+                         @if($errors->has('cover_letter'))
+                            <div class="error text-danger">
+                                <small> {{$errors->first('cover_letter')}}</small>
+                            </div>
+                        @endif 
                         <button  class="btn btn-secondary">Upload</button>
                     </div>
                 </div>
@@ -103,6 +148,12 @@
                     <div class="card-header">resume (CV)</div>
                     <div class="card-body">
                         <input type="file" class="form-control" name="resume"><br>
+                          <!-- Error Exception -->
+                         @if($errors->has('resume'))
+                            <div class="error text-danger">
+                                <small> {{$errors->first('resume')}}</small>
+                            </div>
+                        @endif 
                         <button  class="btn btn-secondary">Upload</button>
                     </div>
 
