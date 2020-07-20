@@ -24,7 +24,10 @@
                 <div class="card-header">Brief Info</div>
 
                 <div class="card-body">
-                    <p>Company: {{$job->company->cname}}</p>
+                    <p>Company: <a href="{{route('company.index',[$job->company->id,$job->company->slug])}}">
+                            {{$job->company->cname}}
+                                </a>
+                    </p>
                     <p>Address: {{$job->address}}</p>
                     <p>Job Position: {{$job->position}}</p>
                     <p>Post on: {{$job->last_date}}</p>

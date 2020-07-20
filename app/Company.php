@@ -9,4 +9,9 @@ class Company extends Model
     public function jobs(){
         return $this->hasMany('App\Jobs'); //one to many
     }
+
+    public function getRouteKeyName(){
+        return 'slug'; 
+    }
+
 }
