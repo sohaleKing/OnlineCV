@@ -23,5 +23,9 @@ Auth::routes();
     Route::get('/home', 'JobController@index');
     Route::get('/jobs/{id}/{job}', 'JobController@show')->name('jobs.show');
     Route::get('/company/{id}/{company}', 'CompanyController@index')->name('company.index');
-
+    Route::get('user/profile', 'UserProfileController@index');
+    Route::post('profile/store', 'UserProfileController@store')->name('profile.store');
+    Route::post('profile/coverletter', 'UserProfileController@coverletter')->name('profile.coverletter');
+    Route::post('profile/resume', 'UserProfileController@resume')->name('profile.resume');
+    Route::post('profile/avatar', 'UserProfileController@avatar')->name('profile.avatar');
 
