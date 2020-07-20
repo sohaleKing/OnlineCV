@@ -19,8 +19,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/home', 'JobController@index');
-Route::get('/jobs/{id}/{job}', 'JobController@show')->name('jobs.show');
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/home', 'JobController@index');
+    Route::get('/jobs/{id}/{job}', 'JobController@show')->name('jobs.show');
+
 
 

@@ -12,7 +12,7 @@ class JobController extends Controller
         return view('home',compact('jobs'));
     }
 
-    public function show(){
-        return view('jobs.show');
+    public function show($id, Jobs $job){
+        return view('jobs.show', compact('job'));
     }
 }

@@ -14,5 +14,6 @@ class DatabaseSeeder extends Seeder
         factory('App\User', 20)->create();
         factory('App\Company', 20)->create();
         factory('App\Jobs', 20)->create();
+        
     }
 }
